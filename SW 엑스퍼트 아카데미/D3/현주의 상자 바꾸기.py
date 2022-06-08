@@ -1,0 +1,20 @@
+T = int(input())
+answers = [''] * T
+
+for t in range(1, T+1):
+    N, Q = map(int, input().split())
+    box = [0] * N
+    
+    for i in range(1, Q + 1):
+        L, R = map(int, input().split())
+        
+        box[L-1:R] = [i] * (R - (L-1))
+    
+    for j in range(N):
+        box[j] = str(box[j])
+    
+    answer = ' '.join(box)
+    answers[t-1] = f'#{t} {answer}'
+
+for i in answers:
+    print(i)
