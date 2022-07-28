@@ -9,9 +9,9 @@ answers = [''] * T
  
 for t in range(1, T+1):
     sudoku = [list(map(int, input().split())) for _ in range(9)]
-    
     answer = 1
     tbt = [[[] for _ in range(3)] for _ in range(3)]
+    
     for i in range(9):
         row = []
         col = []
@@ -32,3 +32,5 @@ for t in range(1, T+1):
  
 for i in answers:
     print(i)
+        
+
