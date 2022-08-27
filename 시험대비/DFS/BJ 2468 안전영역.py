@@ -17,6 +17,7 @@ def dfs(r, c, h):
                 stack.append((ny, nx))
                 visited[ny][nx] = 1
 
+
 N = int(input())
 mapp = [list(map(int, input().split())) for _ in range(N)]
 
@@ -28,7 +29,9 @@ for h in range(max(map(max, mapp))):
     
     for r in range(N):
         for c in range(N):
-            cnt += 1
-            dfs(r, c, h)
+            if mapp[r][c] > h and not visited[r][c]:
+                cnt += 1
+                dfs(r, c, h)
     
     maxV = max(maxV, cnt)
+print(maxV)
